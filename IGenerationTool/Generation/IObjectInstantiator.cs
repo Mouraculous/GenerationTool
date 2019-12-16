@@ -5,6 +5,6 @@ namespace IGenerationTool.Generation
 {
     public interface IObjectInstantiator
     {
-        void InstantiateObject(IList<GameObject> prefabs, float xCoord, float yCoord, GameObject parent);
+        void InstantiateObject(IList<GameObject> prefabs, GameObject parent);
     }
 }

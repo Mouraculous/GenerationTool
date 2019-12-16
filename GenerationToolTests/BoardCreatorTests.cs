@@ -17,6 +17,7 @@ namespace GenerationToolTests
         private Mock<RoomBuilder> _roomBuilder;
         private Mock<CorridorBuilder> _corridorBuilder;
         private Mock<TileLayoutCreator> _tileLayoutCreator;
+        private Mock<EnemyInstantiator> _enemyInstantiator;
         private TileType[][] _boardTiles;
 
         [SetUp]
@@ -27,6 +28,7 @@ namespace GenerationToolTests
             _roomBuilder = new Mock<RoomBuilder>();
             _corridorBuilder = new Mock<CorridorBuilder>();
             _tileLayoutCreator = new Mock<TileLayoutCreator>();
+            _enemyInstantiator = new Mock<EnemyInstantiator>();
             _boardTiles = new TileType[3][];
 
             for (var index = 0; index < _boardTiles.Length; index++)
@@ -36,7 +38,7 @@ namespace GenerationToolTests
 
             _boardTiles[1][1] = TileType.Floor;
 
-            _boardCreator = new BoardCreator(_proximityChecker.Object, _tileInstantiator.Object, _roomBuilder.Object, _corridorBuilder.Object, _tileLayoutCreator.Object);
+            _boardCreator = new BoardCreator(_proximityChecker.Object, _tileInstantiator.Object, _roomBuilder.Object, _corridorBuilder.Object, _tileLayoutCreator.Object, _enemyInstantiator.Object);
         }
 
 
