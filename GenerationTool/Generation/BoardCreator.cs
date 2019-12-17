@@ -41,21 +41,24 @@ namespace GenerationTool.Generation
             _enemyInstantiator = enemyInstantiator;
         }
 
-        public void SetupPrefabs(GameObject[] floorTiles, GameObject[] wallTiles)
+        public void SetupPrefabs(GameObject[] floorTiles, GameObject[] wallTiles, GameObject[] enemyPrefabs)
         {
             FloorPrefabs = floorTiles;
             WallPrefabs = wallTiles;
+            EnemyPrefabs = enemyPrefabs;
         }
 
-        public void SetupSize(int columns, int rows, IntRange numRooms, IntRange roomWidth, IntRange roomHeight,
-            IntRange corridorLength)
+        public void SetupSize(int columns, int rows, int seed, IntRange numRooms, IntRange roomWidth, IntRange roomHeight,
+            IntRange corridorLength, IntRange enemiesNumber)
         {
             Columns = columns;
             Rows = rows;
+            Seed = seed;
             RoomsNumber = numRooms;
             RoomWidth = roomWidth;
             RoomLength = roomHeight;
             CorridorLength = corridorLength;
+            EnemiesNumber = enemiesNumber;
         }
         
         private void Generate() {
